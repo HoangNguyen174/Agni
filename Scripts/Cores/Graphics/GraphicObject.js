@@ -6,8 +6,8 @@ var CObject = function( name, position, rotation, scale, color )
 	this.rotation = rotation || vec3.create();
 	this.scale = scale || vec3.fromValues( 1.0, 1.0, 1.0 );
 	this.Graphics = {};
-	this.AI;
-	this.Physics;
+	this.AI = null;
+	this.Physics = null;
 //	EngineCores.Instance().Graphics.graphicObjects.push( self );
 
 	this.AddModel = function( url )
@@ -36,14 +36,14 @@ var CObject = function( name, position, rotation, scale, color )
 
 var CFace = function()
 {
-	// index of vertices]
-	this.numVertex;
-	this.vertexIndex1;
-	this.vertexIndex2;
-	this.vertexIndex3;
-	this.vertexIndex4;
-	this.normal;
-	this.colorIndex;
+	// index of vertices
+	this.numVertex = null;
+	this.vertexIndex = null;
+	this.vertexIndex2 = null;
+	this.vertexIndex3 = null;
+	this.vertexIndex4 = null;
+	this.normal = null;
+	this.colorIndex = null;
 	this.vertexNormals = [];
 	this.vertexColors = [];
 	this.vertexTangent = [];
@@ -272,6 +272,10 @@ var CModel = function( modelName, url, position, rotation, scale, color )
 					console.log( "Finsing loading " + this.name );
 					//this.Render( testShader );
 				}
+			} 
+			else 
+			{
+				console.log("Fail to load model! Network error status " + xhr.status);
 			}
 		}.bind(this);
 		xhr.send();
