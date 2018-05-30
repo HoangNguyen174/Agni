@@ -169,7 +169,7 @@ var CGraphicManager = ( function()
 
 
 							    	this.Primitives.Sphere = new CObject( 'Sphere' );
-							    	this.Primitives.Sphere.AddModel( './Data/Model/sphere.json' );
+							    	this.Primitives.Sphere.AddModel( './Data/Model/Sphere.json' );
 
 							    	this.basicProgram = new CShaderProgram( "Basic", "./Shader/BasicShader.vert", "./Shader/BasicShader.frag" );
 
