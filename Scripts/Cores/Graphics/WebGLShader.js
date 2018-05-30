@@ -46,7 +46,7 @@ var CWebGLShader = function( fileName, shaderType, callback, callbackScope )
             }
             else
             {
-                console.log( 'Fail to load shader ' + fileName );
+                console.log( 'Fail to load shader ' + fileName + '! Request status ' + request.status );
             }
         }.bind(this);
 
