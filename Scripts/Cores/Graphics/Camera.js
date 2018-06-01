@@ -43,7 +43,6 @@ var CCamera3D = function( name, pos )
 		mat4.translate( this.viewMatrix, this.viewMatrix, temp );
 
 		this.fowardDirection = vec3.fromValues( Math.sin( DegToRad( this.yawDeg ) ), 0.0, -Math.cos( DegToRad( this.yawDeg ) ) );
-
-	}.bind(this)
+	}.bind(this);
 }
 

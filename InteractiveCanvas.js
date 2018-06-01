@@ -35,7 +35,7 @@ function main(){
     EngineCores.Instance().Graphics.AddShaderProgram( "Forward Shader", "./Shader/ForwardShader.vert", "./Shader/ForwardShader.frag" );
     EngineCores.Instance().Graphics.AddShaderProgram( "Post Process Shader", "./Shader/PostProcessShader.vert", "./Shader/PostProcessShader.frag" );
 
-    camera = new CCamera3D( "Main Camera", vec3.fromValues( 200.0, 100.0, 800.0 ) );
+    camera = new CCamera3D( "Main Camera", vec3.fromValues( 30.0, 50.0, 800.0 ) );
     EngineCores.Instance().Graphics.AddCamera( camera );
 
 /*    for( var i = 0; i < 100; i++ )

@@ -3,7 +3,6 @@ precision highp float;
 
 const int MAX_SAMPLE_SIZE = 128;
 
-
 uniform sampler2D u_positionTexture; 
 uniform sampler2D u_normalTexture;
 uniform sampler2D u_viewPositionTexture;
@@ -19,6 +18,7 @@ uniform vec3 u_samplePosition[MAX_SAMPLE_SIZE];
 uniform vec2 u_nearFarPlane;
 
 uniform vec2 u_noiseScale;
+
 varying vec2 v_texCoords;
 
 float linearizeDepth( float expDepth )
@@ -40,8 +40,6 @@ float linearizeDepth( float expDepth )
 	mat4 proj = u_projectionMatrix;
 	mat4 view = u_viewMatrix;
 	vec3 normal = normalize( texture2D( u_viewPositionTexture, v_texCoords ).xyz );
-
-
 
 	vec3 world = texture2D( u_positionTexture, v_texCoords ).xyz;
 	vec3 origin = vec3( u_viewMatrix * vec4( world, 1.0 ) ).xyz;

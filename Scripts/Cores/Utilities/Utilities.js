@@ -1,6 +1,6 @@
 function LoadSourceFromFile( fileName )
 {
-    this.source;
+    this.source = null;
     var request = new XMLHttpRequest();
 
     request.onreadystatechange = function(){

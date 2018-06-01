@@ -115,9 +115,9 @@ var CGraphicManager = ( function()
 										this.canvas = document.createElement( 'canvas' );
 										this.canvas.id = 'Main';
 										this.canvas.className = 'Main';
-										this.canvas.width = '1600';
-										this.canvas.height = '900';
-										document.body.appendChild( this.canvas );
+										this.canvas.width = '800';
+										this.canvas.height = '600';
+										document.body.prepend( this.canvas );
 									}
 
 									this.gl = CWebGLUtils.GetWebGLContext( this.canvas );
@@ -304,7 +304,7 @@ var CGraphicManager = ( function()
 					var sampleArrayUniformLoc = this.gl.getUniformLocation( ssaoProgram.shaderProgram, "u_samplePosition" );
 					this.gl.uniform3fv( sampleArrayUniformLoc, this.SSAO_Samples );
 
-					ssaoProgram.SetUniformValueByName( "u_nearFarPlane", vec2.fromValues( this.activeCamera.near, this.activeCamera.far ) );
+					//ssaoProgram.SetUniformValueByName( "u_nearFarPlane", vec2.fromValues( this.activeCamera.near, this.activeCamera.far ) );
 					ssaoProgram.SetUniformValueByName( "u_noiseScale", vec2.fromValues( this.gl.viewportWidth / 64, this.gl.viewportHeight / 64 ) );
 
 					ssaoProgram.SetUniformValueByName( "u_positionTexture", 	0 );
