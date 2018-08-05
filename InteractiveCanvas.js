@@ -121,6 +121,11 @@ function MainLoop(){
         LoadAssets();
     else
     {
+        if(document.getElementById("loader")) {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("instruction").style.display = "block";
+        }
+        
         var now = Date.now();
         delta = ( now - last ) * 0.001;
         UpdateScene( delta );
